@@ -1,0 +1,12 @@
+# Secret-scan configuration for this repository.
+# Two known non-secrets are allowlisted:
+#  - bridge/src/bridge/source-registry.ts: Circle's public TokenMessengerV2 / MessageTransmitterV2 contract addresses.
+#  - wallet/test/fixtures/authorization-vector.json: the public P-256 test vector with private scalar 1 (a published constant, never a credential).
+[extend]
+useDefault = true
+
+[allowlist]
+paths = [
+  '''bridge/src/bridge/source-registry\.ts''',
+  '''wallet/test/fixtures/authorization-vector\.json''',
+]
