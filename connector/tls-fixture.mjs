@@ -1,0 +1,1 @@
+import https from 'node:https';import http from 'node:http';import fs from 'node:fs';let hits=0;https.createServer({key:fs.readFileSync('/tls/key.pem'),cert:fs.readFileSync('/tls/cert.pem')},(_q,r)=>{hits++;r.end('{}')}).listen(38315,'0.0.0.0');http.createServer((_q,r)=>r.end(JSON.stringify({hits}))).listen(38318,'0.0.0.0');

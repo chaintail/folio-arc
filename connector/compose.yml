@@ -1,0 +1,78 @@
+name: folio-connector
+x-runtime: &runtime
+  build: {context: ., dockerfile: Dockerfile}
+  image: folio-connector-runtime:local
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  tmpfs: [/tmp]
+  mem_limit: 256m
+  pids_limit: 64
+services:
+  bootstrap:
+    <<: *runtime
+    command: [bootstrap.mjs]
+    network_mode: none
+    volumes: ['./.runtime/secrets:/secrets']
+  as:
+    <<: *runtime
+    command: [server.mjs, as]
+    environment:
+      ISSUER: ${ISSUER:-http://localhost:38312}
+      RESOURCE: ${RESOURCE:-http://localhost:38313/mcp}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:38312}
+      PUBLIC_MODE: ${PUBLIC_MODE:-0}
+      COOKIE_SECURE: ${COOKIE_SECURE:-0}
+      TRUST_PROXY: ${TRUST_PROXY:-0}
+      ACCESS_TTL: ${ACCESS_TTL:-5}
+      TEST_PROFILE: ${TEST_PROFILE:-1}
+      DEV_IDENTITY_STUB: ${DEV_IDENTITY_STUB:-1}
+      MOCK_PASSWORD_LOGIN: '1'
+      CIMD_TEST_FIXTURES: ${CIMD_TEST_FIXTURES:-1}
+      NODE_EXTRA_CA_CERTS: /tls/cert.pem
+    ports: ['127.0.0.1:38312:38312']
+    volumes: ['./.runtime/as-state:/state', './.runtime/secrets/as:/secrets:ro', './.runtime/tls:/tls:ro']
+    networks: [oauth, core]
+    depends_on:
+      bootstrap: {condition: service_completed_successfully}
+      core: {condition: service_healthy}
+      tls-fixture: {condition: service_healthy}
+    healthcheck: {test: [CMD, node, -e, "require('http').get({hostname:'localhost',port:38312,path:'/.well-known/openid-configuration',headers:{host:new URL(process.env.ISSUER).host}},r=>{r.resume();process.exit(r.statusCode===200?0:1)}).on('error',()=>process.exit(1))"], interval: 2s, timeout: 2s, retries: 20}
+  mcp:
+    <<: *runtime
+    command: [server.mjs, mcp]
+    environment: {ISSUER: '${ISSUER:-http://localhost:38312}', RESOURCE: '${RESOURCE:-http://localhost:38313/mcp}', PUBLIC_MODE: '${PUBLIC_MODE:-0}'}
+    ports: ['127.0.0.1:38313:38313']
+    volumes: ['./.runtime/secrets/mcp:/secrets:ro']
+    networks: [oauth, core]
+    depends_on: {as: {condition: service_healthy}}
+    healthcheck: {test: [CMD, node, -e, "require('http').get({hostname:'localhost',port:38313,path:'/.well-known/oauth-protected-resource/mcp',headers:{host:new URL(process.env.RESOURCE).host}},r=>{r.resume();process.exit(r.statusCode===200?0:1)}).on('error',()=>process.exit(1))"], interval: 2s, timeout: 2s, retries: 20}
+  core:
+    <<: *runtime
+    command: [server.mjs, core]
+    environment: {ISSUER: '${ISSUER:-http://localhost:38312}', RESOURCE: '${RESOURCE:-http://localhost:38313/mcp}'}
+    depends_on: {bootstrap: {condition: service_completed_successfully}}
+    volumes: ['./.runtime/core-state:/state', './.runtime/secrets/core:/secrets:ro']
+    networks: [core]
+    healthcheck: {test: [CMD, node, -e, "fetch('http://localhost:38316/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"], interval: 2s, timeout: 2s, retries: 20}
+  tls-fixture:
+    <<: *runtime
+    command: [tls-fixture.mjs]
+    volumes: ['./.runtime/tls:/tls:ro']
+    networks: [oauth]
+    healthcheck: {test: [CMD, node, -e, "fetch('http://localhost:38318/hits').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"], interval: 2s, timeout: 2s, retries: 20}
+  test-runner:
+    build: {context: ., dockerfile: Dockerfile.test}
+    image: folio-connector-test:local
+    profiles: [test]
+    environment: {NODE_EXTRA_CA_CERTS: /tls/cert.pem}
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    tmpfs: [/tmp]
+    mem_limit: 256m
+    volumes: ['./.runtime/secrets/runner:/secrets:ro', './.runtime/runner:/state', './evidence:/evidence', './.runtime/tls:/tls:ro']
+    networks: [oauth, core]
+networks:
+  oauth: {}
+  core: {internal: true}
