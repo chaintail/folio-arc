@@ -1,0 +1,23 @@
+{
+  "name": "folio-arc",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "workspaces": [
+    "bridge",
+    "wallet"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import=tsx --test --test-isolation=none --test-reporter=tap bridge/test/bridge/*.test.ts bridge/test/shims/*.test.ts bridge/scripts/cctp/*.test.ts wallet/test/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "tsx": "4.23.13",
+    "typescript": "5.9.3"
+  }
+}

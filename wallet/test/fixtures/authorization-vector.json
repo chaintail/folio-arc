@@ -1,0 +1,7 @@
+{
+  "provenance": "Offline reference using Python cryptography/OpenSSL, public P-256 private scalar 1; never a credential. ECDSA signatures use random nonces: verify signatures, do not compare new signature bytes.",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAGhRANCAARrF9Hy4SxCR/i85uVjpEDydwN9gS3r\nM6D0oTlF2JjClk/jQuL+Gn+bjufrSnwPnhYrzjNXazFezsu2QGg3v1H1\n-----END PRIVATE KEY-----\n",
+  "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEaxfR8uEsQkf4vOblY6RA8ncDfYEt\n6zOg9KE5RdiYwpZP40Li/hp/m47n60p8D54WK84zV2sxXs7LtkBoN79R9Q==\n-----END PUBLIC KEY-----\n",
+  "canonical_json": "{\"body\":{\"chain_type\":\"solana\",\"name\":\"fixture-policy\",\"rules\":[],\"version\":\"1.0\"},\"headers\":{\"privy-app-id\":\"fixture-app\"},\"method\":\"POST\",\"url\":\"https://api.privy.io/v1/policies\",\"version\":1}",
+  "signature_base64_der": "MEUCICbdNWFj9QgDDKUeZ1i1eyCtDAMLhp8hxqVbYZOChETVAiEArlUkRH2yrMXIhKzl4aHFPNXg0jXTo0Chse0VHMp/arU="
+}

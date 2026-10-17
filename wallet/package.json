@@ -1,0 +1,17 @@
+{
+  "name": "wallet-privy",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "exports": {
+    "./server": "./src/server.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import=tsx --test --test-isolation=none test/*.test.ts"
+  },
+  "dependencies": {
+    "@solana/kit": "2.3.0"
+  }
+}

@@ -1,0 +1,1298 @@
+{
+ "input": {
+  "person": "live:abababababababababababababababababababababababababababababababab",
+  "ata": "3wvJdyFnGvaMWpbq93NU91SggiVRveULUXL6iX5VZDGP"
+ },
+ "base": {
+  "policy": {
+   "version": "1.0",
+   "name": "folio-deposit-base-7db02c491b313c53",
+   "chain_type": "ethereum",
+   "rules": [
+    {
+     "name": "approve-8453",
+     "method": "eth_signTransaction",
+     "action": "ALLOW",
+     "conditions": [
+      {
+       "field_source": "ethereum_transaction",
+       "field": "chain_id",
+       "operator": "eq",
+       "value": "8453"
+      },
+      {
+       "field_source": "ethereum_transaction",
+       "field": "to",
+       "operator": "eq",
+       "value": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      },
+      {
+       "field_source": "ethereum_transaction",
+       "field": "value",
+       "operator": "eq",
+       "value": "0"
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "function_name",
+       "operator": "eq",
+       "value": "approve",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "approve.spender",
+       "operator": "eq",
+       "value": "0x28b5a0e9C621a5BadaA536219b3a228C8168cf5d",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "fund-8453",
+     "method": "eth_signTransaction",
+     "action": "ALLOW",
+     "conditions": [
+      {
+       "field_source": "ethereum_transaction",
+       "field": "chain_id",
+       "operator": "eq",
+       "value": "8453"
+      },
+      {
+       "field_source": "ethereum_transaction",
+       "field": "to",
+       "operator": "eq",
+       "value": "0x28b5a0e9C621a5BadaA536219b3a228C8168cf5d"
+      },
+      {
+       "field_source": "ethereum_transaction",
+       "field": "value",
+       "operator": "eq",
+       "value": "0"
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "function_name",
+       "operator": "eq",
+       "value": "depositForBurn",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.destinationDomain",
+       "operator": "eq",
+       "value": "5",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.mintRecipient",
+       "operator": "eq",
+       "value": "0x2bc90238686902c261f364c614f1ecab4ff3e05f581a1c08053fc753d34de76c",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.burnToken",
+       "operator": "eq",
+       "value": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.destinationCaller",
+       "operator": "eq",
+       "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.maxFee",
+       "operator": "eq",
+       "value": "0",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.minFinalityThreshold",
+       "operator": "eq",
+       "value": "2000",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "instantiated_digest": "6b02e606d4554308aab56ee41fbb608c631cd736bd5ee77482db622b7767b6d0",
+  "template_digest": "5f2170468b150639634885f558fd29a9bfecb8c34c046080730c8de8d34218cd"
+ },
+ "arc": {
+  "policy": {
+   "version": "1.0",
+   "name": "folio-deposit-arc-7db02c491b313c53",
+   "chain_type": "ethereum",
+   "rules": [
+    {
+     "name": "approve-5042",
+     "method": "eth_signTransaction",
+     "action": "ALLOW",
+     "conditions": [
+      {
+       "field_source": "ethereum_transaction",
+       "field": "chain_id",
+       "operator": "eq",
+       "value": "5042"
+      },
+      {
+       "field_source": "ethereum_transaction",
+       "field": "to",
+       "operator": "eq",
+       "value": "0x3600000000000000000000000000000000000000"
+      },
+      {
+       "field_source": "ethereum_transaction",
+       "field": "value",
+       "operator": "eq",
+       "value": "0"
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "function_name",
+       "operator": "eq",
+       "value": "approve",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "approve.spender",
+       "operator": "eq",
+       "value": "0x28b5a0e9C621a5BadaA536219b3a228C8168cf5d",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "fund-5042",
+     "method": "eth_signTransaction",
+     "action": "ALLOW",
+     "conditions": [
+      {
+       "field_source": "ethereum_transaction",
+       "field": "chain_id",
+       "operator": "eq",
+       "value": "5042"
+      },
+      {
+       "field_source": "ethereum_transaction",
+       "field": "to",
+       "operator": "eq",
+       "value": "0x28b5a0e9C621a5BadaA536219b3a228C8168cf5d"
+      },
+      {
+       "field_source": "ethereum_transaction",
+       "field": "value",
+       "operator": "eq",
+       "value": "0"
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "function_name",
+       "operator": "eq",
+       "value": "depositForBurn",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.destinationDomain",
+       "operator": "eq",
+       "value": "5",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.mintRecipient",
+       "operator": "eq",
+       "value": "0x2bc90238686902c261f364c614f1ecab4ff3e05f581a1c08053fc753d34de76c",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.burnToken",
+       "operator": "eq",
+       "value": "0x3600000000000000000000000000000000000000",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.destinationCaller",
+       "operator": "eq",
+       "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.maxFee",
+       "operator": "eq",
+       "value": "0",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      },
+      {
+       "field_source": "ethereum_calldata",
+       "field": "depositForBurn.minFinalityThreshold",
+       "operator": "eq",
+       "value": "2000",
+       "abi": [
+        {
+         "type": "function",
+         "name": "approve",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "spender",
+           "type": "address"
+          },
+          {
+           "name": "amount",
+           "type": "uint256"
+          }
+         ],
+         "outputs": [
+          {
+           "type": "bool",
+           "name": ""
+          }
+         ]
+        },
+        {
+         "type": "function",
+         "name": "depositForBurn",
+         "stateMutability": "nonpayable",
+         "inputs": [
+          {
+           "name": "amount",
+           "type": "uint256"
+          },
+          {
+           "name": "destinationDomain",
+           "type": "uint32"
+          },
+          {
+           "name": "mintRecipient",
+           "type": "bytes32"
+          },
+          {
+           "name": "burnToken",
+           "type": "address"
+          },
+          {
+           "name": "destinationCaller",
+           "type": "bytes32"
+          },
+          {
+           "name": "maxFee",
+           "type": "uint256"
+          },
+          {
+           "name": "minFinalityThreshold",
+           "type": "uint32"
+          }
+         ],
+         "outputs": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "instantiated_digest": "6f991d84432dd86977910cb1993e63b242e5fc68460ed7c5047544815c0de091",
+  "template_digest": "a0776877b376490aa7b25652a1cb35de0110bc7e35f46b343b039e2a2cc357f1"
+ }
+}

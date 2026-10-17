@@ -1,0 +1,17 @@
+{
+  "name": "folio-bridge",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import=tsx --test --test-isolation=none test/bridge/*.test.ts test/shims/*.test.ts scripts/cctp/*.test.ts"
+  },
+  "dependencies": {
+    "@noble/hashes": "1.8.0",
+    "@solana/kit": "2.3.0",
+    "viem": "2.56.0",
+    "wallet-privy": "0.0.0"
+  }
+}
