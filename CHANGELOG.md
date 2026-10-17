@@ -5,11 +5,11 @@ The dates below are when each change first landed in Folio.
 
 ## Week of 28 September to 4 October
 
-- **2 Oct:** Funding from Base and Arc into a Folio account became possible end to end, with a durable transfer record that survives restarts and settles each transfer exactly once.
+- **2 Oct:** Funding from Base and Arc into a Folio account became possible end to end, with a durable transfer record that survives restarts and records each transfer once.
 - **2 Oct:** Deposits are read from the chain in bounded chunks with a saved position, so a restart resumes where it stopped and a provider limit holds the transfer instead of losing it.
 - **2 Oct:** Folio covers the network fee for the cross-chain step and sizes the gas top-up with a margin, so fee movement does not force a second wait for finality.
 - **2 Oct:** Signing for the source chain moved server-side through Privy, with a separate EVM authority and a per-person sweep policy; key files in PEM, PKCS8, SEC1 and wallet-auth forms are accepted.
-- **2 Oct:** Live runs from Arc and from Base each delivered 2 USDC, settled and credited once. Details are in [docs/live-runs.md](docs/live-runs.md).
+- **2 Oct:** Live runs from Arc and from Base each delivered 2 USDC and settled on the destination. Details are in [docs/live-runs.md](docs/live-runs.md).
 - **2 Oct:** Deposits carry the time the block was produced, never the time Folio noticed them.
 - **3 Oct:** An incoming deposit is shown as available only after the matching credit is recorded in the person's Funding account.
 - **3 Oct:** The deposit watcher follows the owner's own USDC account rather than whichever account the provider lists first.
