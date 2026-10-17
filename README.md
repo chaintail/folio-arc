@@ -6,7 +6,7 @@ ChatGPT can read holdings and write research under permissions you can revoke.
 
 The hosted ChatGPT connection uses Paper, Folio's simulated investing environment, where research writes cannot access live account data.
 
-[Try Folio](https://tryfolio.io) · [Connect ChatGPT](https://chatgpt.tryfolio.io) · [Policies](https://tryfolio.io/policies/)
+[Try Folio](https://tryfolio.io) · Connect the agent in ChatGPT: `chatgpt.tryfolio.io` ([how](docs/connect-chatgpt.md)) · [Deposit policies](docs/deposit-policies.md)
 
 Video: [Folio for Tameion, 2:45](https://static.tryfolio.io/folio-tameion-v1.mp4)
 
