@@ -1,0 +1,15 @@
+Folio
+Copyright 2026 Chaintail
+
+Folio source in this repository is licensed under the Apache License, Version 2.0.
+Dependencies retain their own copyright notices and licences.
+
+Third-party components:
+- oidc-provider — MIT — https://github.com/panva/node-oidc-provider
+- viem — MIT — https://github.com/wevm/viem
+- @solana/kit — MIT — https://github.com/anza-xyz/kit
+- MCP SDK — MIT — https://github.com/modelcontextprotocol/typescript-sdk
+- jose — MIT — https://github.com/panva/jose
+
+See each dependency's distributed licence for its full terms and attribution.
+This notice does not change the licences of those components.

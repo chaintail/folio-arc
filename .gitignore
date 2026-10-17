@@ -6,3 +6,10 @@ coverage/
 .env.*
 *.sqlite
 *.sqlite-*
+!.env.example
+.runtime/
+.secrets/
+*.pem
+*.key
+*.db
+*.db-*
