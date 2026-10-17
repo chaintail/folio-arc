@@ -23,6 +23,8 @@ Video: [Folio for Tameion, 2:45](https://static.tryfolio.io/folio-tameion-v1.mp4
 - **12 Oct:** connector resource moved to `chatgpt.tryfolio.io`.
 - **14–15 Oct:** per-chain policy pages, consent receipts, and grant/verify/revoke lifecycle.
 
+Every commit here is dated 17 October because the tree was extracted from Folio's private codebase; [CHANGELOG.md](CHANGELOG.md) lists the dated milestones behind it.
+
 ## How it works
 
 A person funds their embedded EVM wallet. Folio's restricted signer approves USDC and burns it toward that person's destination. The observer checks finalized balances; Folio supplies gas and delivers Circle's attested message. Credit follows verified settlement.
