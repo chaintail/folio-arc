@@ -1,6 +1,8 @@
 # Connect ChatGPT to Folio Paper
 
-The hosted connection at **https://chatgpt.tryfolio.io** serves Folio Paper. You do not need a second hostname or Privy account. These instructions describe the hosted integration; the local connector contains isolated portfolios.
+The hosted connection at **https://chatgpt.tryfolio.io** serves Folio Paper.\
+You do not need a second hostname or Privy account.\
+These instructions describe the hosted integration; the local connector contains isolated portfolios.
 
 ## Already connected
 

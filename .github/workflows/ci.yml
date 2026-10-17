@@ -17,4 +17,4 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
-      - run: bash scripts/check-banned.sh
+      - run: scripts/check-banned.sh

@@ -9,8 +9,10 @@ Provider enforcement, private application integration, and every failure branch 
 | Area | Where to inspect | Evidence boundary |
 |---|---|---|
 | Route, recipient, and Standard call construction | `bridge/test/bridge/calls.test.ts` | Local transaction/account fixtures; not live delivery. |
-| Observation, eligibility, precision, and gas | `observer.test.ts`, `planner.test.ts`, `gas.test.ts` in `bridge/test/bridge/` | Local event and ledger checks. |
+| Observation, eligibility, precision, and gas | `observer.test.ts`, [balance-first regression](../bridge/test/bridge/observer-balance-first.test.ts), `planner.test.ts`, `gas.test.ts` in `bridge/test/bridge/` | Local event and ledger checks. |
 | Source execution and readiness recovery | `executor.test.ts`, `deposit-intent.test.ts`, `readiness-recovery.test.ts` in `bridge/test/bridge/` | Controlled failure and restart checks. |
+| Destination settlement and credit replay | [Worker tests](../bridge/test/bridge/destination-worker.test.ts) | Finalized receipt checks and restart/replay with an idempotent credit callback; not the private app's accounting. |
+| Retained dependency boundaries | [Shim tests](../bridge/test/shims/boundaries.test.ts) | Independent address vectors, identity checks, and RPC batching. |
 | Policy rules and authorization signatures | `bridge/test/bridge/evm-policy.test.ts`; `wallet/test/{evm,authorization-signature,authorization-key-forms}.test.ts` | Local rule evaluation and signing vectors; not provider enforcement. |
 | Deployment fee conditions | [Fee proof](fee-proof.md) | Dated RPC reads and source review. |
 | Completed Arc and Base routes | [Live transfers](live-runs.md) | Explorer-visible delivery; application credit reported separately. |

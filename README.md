@@ -42,7 +42,7 @@ ChatGPT reaches Folio through OAuth → MCP → restricted core. It has no tradi
 
 Roadmap: pending xStocks on Arc.
 
-## Run
+## Run what runs
 
 Bridge and wallet require Node 24; local tests need no credentials:
 
@@ -54,7 +54,7 @@ npm test
 
 See [bridge operation](docs/bridge.md) and [coverage](docs/validation-matrix.md). The full app server is excluded.
 
-The connector requires Docker Engine, Docker Compose, Python 3, and OpenSSL:
+The connector runs separately from npm on Linux: Docker Engine/Compose, Python 3, OpenSSL, `ss` (iproute2), and `curl` are required. Preparation needs permission to assign private state to UID/GID 1000.
 
 ```sh
 cd connector
@@ -64,6 +64,8 @@ docker compose build
 docker compose up -d --wait as mcp core tls-fixture
 ./scripts/container-acceptance.sh
 ```
+
+Before repeating acceptance, run `./scripts/reset-local.sh` from `connector/`, then prepare/start/test again. Reset clears local account state, preserving credentials; `docker compose down -v` alone preserves that state.
 
 See [local setup](connector/README.md) and [connecting ChatGPT](docs/connect-chatgpt.md). Bridge tools default to read-only checks or dry runs; signing and broadcasting require explicit flags.
 

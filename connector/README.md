@@ -19,7 +19,7 @@ curl --ipv4 --noproxy '*' --fail http://localhost:38313/.well-known/oauth-protec
 docker compose run --rm --entrypoint node test-runner storage-test.mjs
 ```
 
-The Compose project is `folio-connector`. Only the authorization server and MCP publish host ports, both bound to IPv4 loopback. The two Compose publication lines are the repository scanner's sole content exemption: loopback bind, not an internal host. Core, administration, and TLS fixture ports stay inside Docker. The OAuth network is a normal bridge so Docker can publish its endpoints; it permits outbound access. The core network remains internal. Acceptance requires no external service and checks both published discovery endpoints from the host before its in-network tests.
+The Compose project is `folio-connector`. Only the authorization server and MCP publish host ports, both bound to IPv4 loopback. The two Compose publication lines are the repository scanner's sole private-host exemption: loopback bind, not an internal host. Core, administration, and TLS fixture ports stay inside Docker. The OAuth network is a normal bridge so Docker can publish its endpoints; it permits outbound access. The core network remains internal. Acceptance requires no external service and checks both published discovery endpoints from the host before its in-network tests.
 
 The issuer is `http://localhost:38312`; the resource is `http://localhost:38313/mcp`. The local client uses the exact redirect `http://localhost:38314/callback`; no callback listener is needed.
 
