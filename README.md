@@ -8,7 +8,7 @@ The hosted ChatGPT connection uses Paper, Folio's simulated investing environmen
 
 [Try Folio](https://tryfolio.io) · [Connect ChatGPT](https://chatgpt.tryfolio.io) · [Policies](https://tryfolio.io/policies/)
 
-Video: (added before submission)
+Video: [Folio for Tameion, 2:45](https://static.tryfolio.io/folio-tameion-v1.mp4)
 
 ## What is here
 
